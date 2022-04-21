@@ -15,7 +15,16 @@ function generateKeyNew(list: any[], day: string) {
   return key;
 }
 
-const key = generateKeyNew(countryData, today);
+function randomDate() {
+	const today = new Date();
+	var oneYearFromNow = new Date();
+	oneYearFromNow.setFullYear(today.getFullYear() + 1);
+
+	const randDate = new Date(today.getTime() + Math.random() * (oneYearFromNow.getTime()-today.getTime()));
+	return randDate.toLocaleDateString("en-CA");
+}
+
+const key = generateKeyNew(countryData, randomDate());
 
 export const answerCountry = countryData[key];
 export const answerName = answerCountry.properties.NAME;
