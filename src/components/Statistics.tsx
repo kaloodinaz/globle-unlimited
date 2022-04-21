@@ -190,21 +190,13 @@ ${lastWin === today ? emojiGuesses : "--"} = ${todaysGuesses}
       </table>
       <div className="py-6 flex w-full justify-around">
         <button
-          className="bg-red-700 text-white rounded-md px-6 py-2 block
-          text-base font-medium hover:bg-red-900
-          focus:outline-none focus:ring-2 focus:ring-red-300 sm:mx-4"
-          onClick={promptReset}
-        >
-          <FormattedMessage id="Stats8" />
-        </button>
-        <button
           className="bg-blue-700 hover:bg-blue-900 dark:bg-purple-800 dark:hover:bg-purple-900
           text-white rounded-md px-8 py-2 block text-base font-medium 
           focus:outline-none focus:ring-2 focus:ring-blue-300 
           justify-around sm:flex-grow sm:mx-10"
-          onClick={copyToClipboard}
+          onClick={() => {localStorage.clear();window.location.reload();}}
         >
-          <FormattedMessage id="Stats9" />
+          <FormattedMessage id="Stats9" defaultMessage="Next Game"/>
         </button>
       </div>
       <Fade

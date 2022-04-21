@@ -55,7 +55,7 @@ export const English: Messages = {
   Stats6: "Average guesses",
   Stats7: "Avg. Guesses",
   Stats8: "Reset",
-  Stats9: "Share",
+  Stats9: "Next Game",
   Stats10: "Are you sure you want to reset your score?",
   Stats11: "Stats erased.",
   Stats12: "Copied to clipboard!",

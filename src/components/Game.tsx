@@ -42,17 +42,6 @@ export default function Game({ reSpin, setShowStats }: Props) {
   // If it's a new day though, start with a blank slate
   let storedCountryNames: string[] = [];
   let storedCountries: Country[] = [];
-  if (today <= storedGuesses.day) {
-    storedCountryNames = storedGuesses.countries;
-    storedCountries = storedCountryNames.map((guess) => {
-      const foundCountry = countryData.find((country) => {
-        return country.properties.NAME === guess;
-      });
-      if (!foundCountry) throw new Error("Country mapping broken");
-      foundCountry["proximity"] = polygonDistance(foundCountry, answerCountry);
-      return foundCountry;
-    });
-  }
   // Check if win condition already met
   const alreadyWon = storedCountryNames.includes(answerName);
 
